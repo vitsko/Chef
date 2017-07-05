@@ -6,13 +6,26 @@
 
     public class Salad
     {
-        private List<Vegetable> salad = Data.GetVegetablesForSalad();
+        private List<Vegetable> mixture;
+
+        public List<Vegetable> MixtureOfVegetables
+        {
+            get
+            {
+                if (this.mixture == null)
+                {
+                    this.mixture = Data.GetVegetablesForSalad();
+                }
+
+                return this.mixture;
+            }
+        }
 
         public int GetTotalCalories()
         {
             int sum = 0;
 
-            foreach (var vegetable in salad)
+            foreach (var vegetable in this.MixtureOfVegetables)
             {
                 sum += vegetable.TotalCalories;
             }
@@ -22,12 +35,12 @@
 
         public List<Vegetable> SortBy(Func<Vegetable, object> orderCriteria)
         {
-            return salad.OrderBy(orderCriteria).ToList();
+            return this.MixtureOfVegetables.OrderBy(orderCriteria).ToList();
         }
 
         public List<Vegetable> Search(Func<Vegetable, bool> searchCriteria)
         {
-            return salad.Where(searchCriteria).ToList();
+            return this.MixtureOfVegetables.Where(searchCriteria).ToList();
         }
     }
 }
