@@ -40,10 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data.cs" />
+    <Compile Include="DistinctVegetablesComparer.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="Salad.cs" />
     <Compile Include="Vegetable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArbitraryException\ArbitraryException.csproj">
+      <Project>{e435f9a1-30ec-423e-9b11-8ceab19cfa6d}</Project>
+      <Name>ArbitraryException</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resource\Resource.csproj">
+      <Project>{2f2ae586-3de4-482d-b90f-d4e63afaac63}</Project>
+      <Name>Resource</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

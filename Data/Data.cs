@@ -1,12 +1,13 @@
-﻿namespace Salad
+﻿namespace Data
 {
     using System.Collections.Generic;
+    using Salad;
 
-    internal static class Data
+    public static class Data
     {
-        internal static List<Vegetable> GetVegetablesForSalad()
+        public static List<object> GetVegetablesForSalad()
         {
-            List<Vegetable> salad = new List<Vegetable>()
+            List<object> salad = new List<object>()
             {
                 new Vegetable("Onion", "Green", 100, 40),
                 new Vegetable("Pepper", "Red", 200, 27),

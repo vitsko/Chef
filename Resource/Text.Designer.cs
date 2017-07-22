@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Chef {
+namespace Resource {
     using System;
     
     
@@ -22,7 +22,7 @@ namespace Chef {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Text {
+    public class Text {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,10 +36,10 @@ namespace Chef {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Chef.Text", typeof(Text).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Resource.Text", typeof(Text).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace Chef {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Chef {
         /// <summary>
         ///   Looks up a localized string similar to Caloricity of salad: {0}.
         /// </summary>
-        internal static string AboutCaloricity {
+        public static string AboutCaloricity {
             get {
                 return ResourceManager.GetString("AboutCaloricity", resourceCulture);
             }
@@ -72,9 +72,27 @@ namespace Chef {
         /// <summary>
         ///   Looks up a localized string similar to About vegetables in the salad:.
         /// </summary>
-        internal static string AboutVegetables {
+        public static string AboutVegetables {
             get {
                 return ResourceManager.GetString("AboutVegetables", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Color is undefined..
+        /// </summary>
+        public static string ColorIsUndefined {
+            get {
+                return ResourceManager.GetString("ColorIsUndefined", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Color.
+        /// </summary>
+        public static string ColorOfVegetable {
+            get {
+                return ResourceManager.GetString("ColorOfVegetable", resourceCulture);
             }
         }
         
@@ -82,7 +100,7 @@ namespace Chef {
         ///   Looks up a localized string similar to You input incorrect max calorie of vegetable per unit of weigth. 
         ///Max calorie of vegetable per unit of weigth must be integer..
         /// </summary>
-        internal static string ErrorRange {
+        public static string ErrorRange {
             get {
                 return ResourceManager.GetString("ErrorRange", resourceCulture);
             }
@@ -95,29 +113,76 @@ namespace Chef {
         ///[2] -- Caloricity of salad
         ///[3] -- Sort vegetables by color
         ///[4] -- Search vegetables by calories per unit of weigth
+        ///[5] -- Search vegetable by Id
         ///
         ///[Q] -- Exit
         ///    .
         /// </summary>
-        internal static string MainMenu {
+        public static string MainMenu {
             get {
                 return ResourceManager.GetString("MainMenu", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name is undefined..
+        /// </summary>
+        public static string NameIsUndefined {
+            get {
+                return ResourceManager.GetString("NameIsUndefined", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vegetable.
+        /// </summary>
+        public static string NameOfVegetable {
+            get {
+                return ResourceManager.GetString("NameOfVegetable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The vegetable doesn&apos;t exist with Id = {0}..
+        /// </summary>
+        public static string NotExistId {
+            get {
+                return ResourceManager.GetString("NotExistId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salad contains only one vegetable:
+        ///{0}..
+        /// </summary>
+        public static string OneVegetable {
+            get {
+                return ResourceManager.GetString("OneVegetable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please press any key to exit in the main menu..
         /// </summary>
-        internal static string PressAnyKey {
+        public static string PressAnyKey {
             get {
                 return ResourceManager.GetString("PressAnyKey", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Could you please specify id of vegetable?.
+        /// </summary>
+        public static string QuestionId {
+            get {
+                return ResourceManager.GetString("QuestionId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could you please specify max calorie of vegetable per unit of weigth?.
         /// </summary>
-        internal static string QuestionRange {
+        public static string QuestionRange {
             get {
                 return ResourceManager.GetString("QuestionRange", resourceCulture);
             }
@@ -126,18 +191,45 @@ namespace Chef {
         /// <summary>
         ///   Looks up a localized string similar to Result of search is empty..
         /// </summary>
-        internal static string ResultEmpty {
+        public static string ResultEmpty {
             get {
                 return ResourceManager.GetString("ResultEmpty", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Salad doesn&apos;t have any vegetable..
+        /// </summary>
+        public static string SaladIsEmpty {
+            get {
+                return ResourceManager.GetString("SaladIsEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salad contains same vegetable..
+        /// </summary>
+        public static string SameVegetable {
+            get {
+                return ResourceManager.GetString("SameVegetable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chef.
         /// </summary>
-        internal static string Title {
+        public static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Some object isn&apos;t vegetable..
+        /// </summary>
+        public static string VegetableIsNull {
+            get {
+                return ResourceManager.GetString("VegetableIsNull", resourceCulture);
             }
         }
     }

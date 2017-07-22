@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ADA9AB06-21EF-49ED-95A0-7F230CB6765F}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{4E42EEB5-158B-4E66-89B2-8AC32DC1FE6C}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Chef</RootNamespace>
-    <AssemblyName>Chef</AssemblyName>
+    <RootNamespace>Data</RootNamespace>
+    <AssemblyName>Data</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,24 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainMenu.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Data.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Screen.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ArbitraryException\ArbitraryException.csproj">
-      <Project>{e435f9a1-30ec-423e-9b11-8ceab19cfa6d}</Project>
-      <Name>ArbitraryException</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Data\Data.csproj">
-      <Project>{4e42eeb5-158b-4e66-89b2-8ac32dc1fe6c}</Project>
-      <Name>Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Resource\Resource.csproj">
-      <Project>{2f2ae586-3de4-482d-b90f-d4e63afaac63}</Project>
-      <Name>Resource</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Salad\Salad.csproj">
       <Project>{6b8f6e6f-5312-4c46-a712-c7ff87e4e680}</Project>
       <Name>Salad</Name>

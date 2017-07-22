@@ -1,6 +1,8 @@
 ﻿namespace Chef
 {
     using System;
+    using Data;
+    using Resource;
     using Salad;
     using static System.Console;
 
@@ -14,11 +16,11 @@
             ConsoleKey selectPointMenu;
 
             Salad salad = new Salad();
+            salad.MixtureOfVegetables = Data.GetVegetablesForSalad();
 
             while (!exit)
             {
-                Screen.ClearScreen();
-                Screen.ShowText(Text.MainMenu);
+                Screen.ShowWithClear(Text.MainMenu);
                 selectPointMenu = ReadKey().Key;
 
                 switch (selectPointMenu)
@@ -26,54 +28,36 @@
                     case ConsoleKey.D1:
                     case ConsoleKey.NumPad1:
                         {
-                            Screen.AboutSalad(salad.MixtureOfVegetables);
+                            Screen.AboutSalad(salad);
                             break;
                         }
 
                     case ConsoleKey.D2:
                     case ConsoleKey.NumPad2:
                         {
-                            Screen.ClearScreen();
-                            Screen.ShowText(string.Format(Text.AboutCaloricity, salad.GetTotalCalories()));
+                            Screen.ShowWithClear(string.Format(Text.AboutCaloricity, salad.GetTotalCalories()));
                             break;
                         }
 
                     case ConsoleKey.D3:
                     case ConsoleKey.NumPad3:
                         {
-                            var sortByColor = salad.SortBy(vegetable => vegetable.Color);
-                            Screen.AboutSalad(sortByColor);
+                            var sortByColor = salad.SortBy(vegetable => ((Vegetable)vegetable).Color);
+                            Screen.ShowResult(sortByColor);
                             break;
                         }
 
                     case ConsoleKey.D4:
                     case ConsoleKey.NumPad4:
                         {
-                            Screen.ClearScreen();
-                            Screen.ShowText(Text.QuestionRange);
+                            MainMenu.SearchByCalories(salad);
+                            break;
+                        }
 
-                            int toParse = 0;
-                            var maxCalorie = ReadLine();
-
-                            if (Helper.IsMoreThanZero(maxCalorie, out toParse))
-                            {
-                                var vegetableWithCalories = salad.Search(vegetable => vegetable.CaloriesPerUnitWeigth <= toParse);
-
-                                if (vegetableWithCalories.Count == 0)
-                                {
-                                    Screen.ShowText(Text.ResultEmpty);
-                                }
-                                else
-                                {
-                                    Screen.AboutSalad(vegetableWithCalories);
-                                }
-                            }
-                            else
-                            {
-                                Screen.ClearScreen();
-                                Screen.ShowText(Text.ErrorRange);
-                            }
-
+                    case ConsoleKey.D5:
+                    case ConsoleKey.NumPad5:
+                        {
+                            MainMenu.SearchById(salad);
                             break;
                         }
 

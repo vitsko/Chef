@@ -1,47 +1,144 @@
 ﻿namespace Salad
 {
+    using System;
+    using ArbitraryException;
+    using Resource;
+
     public class Vegetable
     {
-        private const int UnitOfWeigth = 100;
+        private const int UnitOfWeigth = 100,
+                         CaloriesDefault = 50,
+                         WeigthDefault = 100;
+
         private static int countId = 1;
 
-        public Vegetable(string name, string color, int weight, int caloriesByUnitWeigth)
+        private string color,
+                       name;
+
+        private int caloriesPerUnitWeigth,
+                    weight;
+
+        public Vegetable(string name, string color, int weight, int caloriesPerUnitWeigth)
         {
             this.Id = Vegetable.GetID();
             this.Name = name;
             this.Color = color;
             this.Weight = weight;
-            this.CaloriesPerUnitWeigth = caloriesByUnitWeigth;
+            this.CaloriesPerUnitWeigth = caloriesPerUnitWeigth;
         }
 
         public string Color
         {
-            get;
-            private set;
+            get
+            {
+                return this.color;
+            }
+
+            private set
+            {
+                try
+                {
+                    if (string.IsNullOrWhiteSpace(value))
+                    {
+                        throw new ArgumentException(Text.ColorIsUndefined);
+                    }
+                    else
+                    {
+                        this.color = value;
+                    }
+                }
+                catch
+                {
+                    this.color = Text.ColorOfVegetable;
+                }
+            }
         }
 
         public int CaloriesPerUnitWeigth
         {
-            get;
-            private set;
+            get
+            {
+                return this.caloriesPerUnitWeigth;
+            }
+
+            private set
+            {
+                try
+                {
+                    if (value <= 0)
+                    {
+                        throw new NotExistCaloriesException();
+                    }
+                    else
+                    {
+                        this.caloriesPerUnitWeigth = value;
+                    }
+                }
+                catch
+                {
+                    this.caloriesPerUnitWeigth = Vegetable.CaloriesDefault;
+                }
+            }
         }
 
-        internal int Id
+        public int Id
         {
             get;
             private set;
         }
 
-        internal string Name
+        public string Name
         {
-            get;
-            private set;
+            get
+            {
+                return this.name;
+            }
+
+            private set
+            {
+                try
+                {
+                    if (string.IsNullOrWhiteSpace(value))
+                    {
+                        throw new ArgumentException(Text.NameIsUndefined);
+                    }
+                    else
+                    {
+                        this.name = value;
+                    }
+                }
+                catch
+                {
+                    this.name = Text.NameOfVegetable;
+                }
+            }
         }
 
-        internal int Weight
+        public int Weight
         {
-            get;
-            private set;
+            get
+            {
+                return this.weight;
+            }
+
+            private set
+            {
+                try
+                {
+                    if (value <= 0)
+                    {
+                        throw new NotExistCaloriesException();
+                    }
+                    else
+                    {
+                        this.weight = value;
+                    }
+                }
+                catch
+                {
+                    this.weight = Vegetable.WeigthDefault;
+                }
+            }
         }
 
         internal int TotalCalories
