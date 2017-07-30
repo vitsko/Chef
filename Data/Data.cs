@@ -20,5 +20,64 @@
 
             return salad;
         }
+
+        public static List<object> GetSameVegetablesOnly()
+        {
+            List<object> salad = new List<object>()
+            {
+                new Vegetable("Onion", "Green", 100, 40),
+                new Vegetable("Onion", "Green", 100, 40),
+                new Vegetable("Onion", "Green", 100, 40)
+            };
+
+            return salad;
+        }
+
+        public static List<object> GetVegetablesWithNull()
+        {
+            List<object> salad = new List<object>()
+            {
+                new Vegetable("Onion", "Green", 100, 40),
+                new Vegetable("Pepper", "Red", 200, 27),
+               null
+            };
+
+            return salad;
+        }
+
+        public static List<object> GetVegetablesWithAnotherObject()
+        {
+            List<object> salad = new List<object>()
+            {
+                new Vegetable("Onion", "Green", 100, 40),
+                new object(),
+                new Vegetable("Pepper", "Red", 200, 27)
+            };
+
+            return salad;
+        }
+
+        public static List<object> GetAllIsNotVegetables()
+        {
+            List<object> salad = new List<object>()
+            {
+                new object(),
+                null,
+                new object()
+            };
+
+            return salad;
+        }
+
+        public static List<object> GetVegetablesForCheckSaladToString()
+        {
+            List<object> salad = new List<object>()
+            {
+                new Vegetable("Onion", "Green", 100, 40),
+                new Vegetable("Pepper", "Red", 200, 27)
+            };
+
+            return salad;
+        }
     }
 }

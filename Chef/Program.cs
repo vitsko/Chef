@@ -42,7 +42,7 @@
                     case ConsoleKey.D3:
                     case ConsoleKey.NumPad3:
                         {
-                            var sortByColor = salad.SortBy(vegetable => ((Vegetable)vegetable).Color);
+                            var sortByColor = Operations.SortBy(salad.MixtureOfVegetables, vegetable => ((Vegetable)vegetable).Color);
                             Screen.ShowResult(sortByColor);
                             break;
                         }

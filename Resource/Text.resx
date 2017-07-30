@@ -164,4 +164,8 @@ Max calorie of vegetable per unit of weigth must be integer.</value>
   <data name="SameVegetable" xml:space="preserve">
     <value>Salad contains same vegetable.</value>
   </data>
+  <!--For tets-->
+  <data name="CheckToString" xml:space="preserve">
+    <value>About vegetables in the salad:</value>
+  </data>
 </root>

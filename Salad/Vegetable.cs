@@ -141,7 +141,7 @@
             }
         }
 
-        internal int TotalCalories
+        public int TotalCalories
         {
             get
             {

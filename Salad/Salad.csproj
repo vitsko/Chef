@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="DistinctVegetablesComparer.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="Operations.cs" />
     <Compile Include="Salad.cs" />
     <Compile Include="Vegetable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -16,7 +16,7 @@
 
             if (Helper.IsMoreThanZero(maxCalorie, out toParse))
             {
-                var vegetableWithCalories = salad.Search(vegetable => ((Vegetable)vegetable).CaloriesPerUnitWeigth <= toParse);
+                var vegetableWithCalories = Operations.Search(salad.MixtureOfVegetables, vegetable => ((Vegetable)vegetable).CaloriesPerUnitWeigth <= toParse);
 
                 Screen.ShowResult(vegetableWithCalories);
             }
@@ -37,7 +37,7 @@
             {
                 if (Helper.IsMoreThanZero(idVegatable, out toParse))
                 {
-                    var vegetableWithId = salad.Search(vegetable => ((Vegetable)vegetable).Id == toParse);
+                    var vegetableWithId = Operations.Search(salad.MixtureOfVegetables, vegetable => ((Vegetable)vegetable).Id == toParse);
 
                     Screen.ShowResult(vegetableWithId);
                 }

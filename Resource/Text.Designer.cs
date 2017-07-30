@@ -79,6 +79,15 @@ namespace Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About vegetables in the salad:.
+        /// </summary>
+        public static string CheckToString {
+            get {
+                return ResourceManager.GetString("CheckToString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Color is undefined..
         /// </summary>
         public static string ColorIsUndefined {

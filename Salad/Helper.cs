@@ -34,8 +34,6 @@
 
         internal static bool IsResult(List<object> salad)
         {
-            bool isResult = true;
-
             try
             {
                 Helper.SaladIsEmpty(salad);
@@ -47,10 +45,10 @@
             }
             catch
             {
-                isResult = false;
+                return false;
             }
 
-            return isResult;
+            return true;
         }
     }
 }
