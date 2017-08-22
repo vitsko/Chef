@@ -70,6 +70,24 @@ namespace Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Info about the salad has loaded from {0}.
+        /// </summary>
+        public static string AboutLoadFile {
+            get {
+                return ResourceManager.GetString("AboutLoadFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Info about the salad has saved in {0}.
+        /// </summary>
+        public static string AboutSavedFile {
+            get {
+                return ResourceManager.GetString("AboutSavedFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About vegetables in the salad:.
         /// </summary>
         public static string AboutVegetables {
@@ -79,11 +97,29 @@ namespace Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Calories per {0} g.:.
+        /// </summary>
+        public static string CaloriesPerUnitWeigth {
+            get {
+                return ResourceManager.GetString("CaloriesPerUnitWeigth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About vegetables in the salad:.
         /// </summary>
         public static string CheckToString {
             get {
                 return ResourceManager.GetString("CheckToString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Color:.
+        /// </summary>
+        public static string Color {
+            get {
+                return ResourceManager.GetString("Color", resourceCulture);
             }
         }
         
@@ -117,12 +153,70 @@ namespace Resource {
         
         /// <summary>
         ///   Looks up a localized string similar to 
+        ///Export Menu:
+        ///[1] -- From txt&apos;s file
+        ///[2] -- From bin&apos;s file
+        ///
+        ///[Q] -- Exit
+        ///    .
+        /// </summary>
+        public static string ExportMenu {
+            get {
+                return ResourceManager.GetString("ExportMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Info about the salad has not loaded. File {0} has been not found or contains incorrect data..
+        /// </summary>
+        public static string FileNotLoaded {
+            get {
+                return ResourceManager.GetString("FileNotLoaded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Info about the salad has not saved. File {0} has not created..
+        /// </summary>
+        public static string FileNotSaved {
+            get {
+                return ResourceManager.GetString("FileNotSaved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id:.
+        /// </summary>
+        public static string Id {
+            get {
+                return ResourceManager.GetString("Id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///Import Menu:
+        ///[1] -- From txt&apos;s file
+        ///[2] -- From bin&apos;s file
+        ///
+        ///[Q] -- Exit
+        ///    .
+        /// </summary>
+        public static string ImportMenu {
+            get {
+                return ResourceManager.GetString("ImportMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
         ///Main menu:
         ///[1] -- About vegetables in the salad
         ///[2] -- Caloricity of salad
         ///[3] -- Sort vegetables by color
         ///[4] -- Search vegetables by calories per unit of weigth
         ///[5] -- Search vegetable by Id
+        ///[6] -- Storage
         ///
         ///[Q] -- Exit
         ///    .
@@ -130,6 +224,15 @@ namespace Resource {
         public static string MainMenu {
             get {
                 return ResourceManager.GetString("MainMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vegetable:.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
             }
         }
         
@@ -225,6 +328,48 @@ namespace Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to #.
+        /// </summary>
+        public static string Sharp {
+            get {
+                return ResourceManager.GetString("Sharp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #.
+        /// </summary>
+        public static string SpliterOfData {
+            get {
+                return ResourceManager.GetString("SpliterOfData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to :.
+        /// </summary>
+        public static string SpliterOfTitle {
+            get {
+                return ResourceManager.GetString("SpliterOfTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///Storage Menu:
+        ///[1] -- Export
+        ///[2] -- Import
+        ///
+        ///[Q] -- Exit
+        ///    .
+        /// </summary>
+        public static string StorageMenu {
+            get {
+                return ResourceManager.GetString("StorageMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chef.
         /// </summary>
         public static string Title {
@@ -234,11 +379,47 @@ namespace Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total calories:.
+        /// </summary>
+        public static string TotalCalories {
+            get {
+                return ResourceManager.GetString("TotalCalories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SavedFile.txt.
+        /// </summary>
+        public static string TxtFile {
+            get {
+                return ResourceManager.GetString("TxtFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit Of Weigth, g:.
+        /// </summary>
+        public static string UnitOfWeigth {
+            get {
+                return ResourceManager.GetString("UnitOfWeigth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Some object isn&apos;t vegetable..
         /// </summary>
         public static string VegetableIsNull {
             get {
                 return ResourceManager.GetString("VegetableIsNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weight, g:.
+        /// </summary>
+        public static string Weight {
+            get {
+                return ResourceManager.GetString("Weight", resourceCulture);
             }
         }
     }

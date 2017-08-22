@@ -61,6 +61,13 @@
                             break;
                         }
 
+                    case ConsoleKey.D6:
+                    case ConsoleKey.NumPad6:
+                        {
+                            StorageMenu.Main(salad);
+                            break;
+                        }
+
                     case ConsoleKey.Q:
                         {
                             exit = true;
@@ -73,8 +80,7 @@
 
                 if (Screen.IsSelectedKey(selectPointMenu))
                 {
-                    Screen.ShowText(Text.PressAnyKey);
-                    ReadKey();
+                    Screen.AboutPressAnyKey();
                 }
             }
         }

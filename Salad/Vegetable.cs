@@ -1,6 +1,8 @@
 ﻿namespace Salad
 {
     using System;
+    using System.Collections.Generic;
+    using System.Text;
     using ArbitraryException;
     using Resource;
 
@@ -149,9 +151,53 @@
             }
         }
 
+        public Dictionary<string, string> TitleasAndValuesOfVegetable
+        {
+            get
+            {
+                Dictionary<string, string> titleasAndValuesOfVegetable = new Dictionary<string, string>();
+
+                titleasAndValuesOfVegetable.Add(Text.Name, this.Name);
+                titleasAndValuesOfVegetable.Add(Text.Color, this.Color);
+                titleasAndValuesOfVegetable.Add(Text.Weight, this.Weight.ToString());
+                titleasAndValuesOfVegetable.Add(string.Format(Text.CaloriesPerUnitWeigth, Vegetable.UnitOfWeigth.ToString()), this.CaloriesPerUnitWeigth.ToString());
+                titleasAndValuesOfVegetable.Add(Text.TotalCalories, this.TotalCalories.ToString());
+
+                return titleasAndValuesOfVegetable;
+            }
+        }
+
         public override string ToString()
         {
-            return $"Id = {this.Id}\nName of vegetable is {this.Name}\nColor is {this.Color}\nWeight is {this.Weight} g.\nAmount of calories in {Vegetable.UnitOfWeigth} g. is {this.CaloriesPerUnitWeigth}\nTotal calories is {this.TotalCalories}\n";
+            StringBuilder allinfo = new StringBuilder();
+
+            allinfo.AppendLine(Text.Id);
+            allinfo.AppendLine(this.Id.ToString());
+
+            foreach (var item in this.TitleasAndValuesOfVegetable)
+            {
+                allinfo.AppendLine(item.Key);
+                allinfo.AppendLine(item.Value);
+            }
+
+            return allinfo.ToString();
+        }
+
+        internal virtual string GetInfoToSave()
+        {
+            StringBuilder toSave = new StringBuilder();
+
+            foreach (var item in this.TitleasAndValuesOfVegetable)
+            {
+                if (!item.Key.Equals(Text.TotalCalories))
+                {
+                    toSave.Append(item.Key);
+                    toSave.Append(item.Value);
+                    toSave.Append(Text.Sharp);
+                }
+            }
+
+            return toSave.ToString();
         }
 
         private static int GetID()

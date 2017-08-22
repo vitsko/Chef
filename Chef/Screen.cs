@@ -26,7 +26,7 @@
                    selectCreateditem == ConsoleKey.D3 ||
                    selectCreateditem == ConsoleKey.D4 ||
                    selectCreateditem == ConsoleKey.D5 ||
-                   selectCreateditem == ConsoleKey.NumPad1 ||
+                                     selectCreateditem == ConsoleKey.NumPad1 ||
                    selectCreateditem == ConsoleKey.NumPad2 ||
                    selectCreateditem == ConsoleKey.NumPad3 ||
                    selectCreateditem == ConsoleKey.NumPad4 ||
@@ -46,10 +46,22 @@
             }
         }
 
+        internal static void ResultStorage(string message, string file)
+        {
+            Screen.ShowWithClear(string.Format(message, file));
+            Screen.AboutPressAnyKey();
+        }
+
         internal static void ShowWithClear(string text)
         {
             Clear();
             Screen.ShowText(text);
+        }
+
+        internal static void AboutPressAnyKey()
+        {
+            Screen.ShowText(Text.PressAnyKey);
+            ReadKey();
         }
 
         private static string GetInfoFromVegetable(List<object> result)

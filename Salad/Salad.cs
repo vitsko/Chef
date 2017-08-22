@@ -102,6 +102,23 @@
             }
         }
 
+        public string SaveInfo()
+        {
+            StringBuilder lines = new StringBuilder();
+
+            foreach (var item in this.MixtureOfVegetables)
+            {
+                var veget = item as Vegetable;
+
+                if (veget != null)
+                {
+                    lines.AppendLine(veget.GetInfoToSave());
+                }
+            }
+
+            return lines.ToString();
+        }
+
         private static List<object> DistinctVegetables(List<object> salad)
         {
             var isResult = Helper.IsResult(salad);
