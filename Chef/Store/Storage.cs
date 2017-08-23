@@ -15,6 +15,14 @@
             this.fileName = fileName;
         }
 
+        internal string FileName
+        {
+            get
+            {
+                return this.fileName;
+            }
+        }
+
         internal bool Export()
         {
             return this.export.ExportToFile(this.salad, this.fileName);

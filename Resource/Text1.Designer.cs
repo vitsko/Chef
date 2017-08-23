@@ -97,6 +97,15 @@ namespace Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SavedFile.data.
+        /// </summary>
+        public static string BinFile {
+            get {
+                return ResourceManager.GetString("BinFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Calories per {0} g.:.
         /// </summary>
         public static string CaloriesPerUnitWeigth {

@@ -7,10 +7,13 @@
     using ArbitraryException;
     using Resource;
 
+    [Serializable]
     public class Salad
     {
-        private List<object> vegetables,
-                             distinctVegetables;
+        private List<object> vegetables;
+
+        [NonSerialized]
+        private List<object> distinctVegetables;
 
         public List<object> MixtureOfVegetables
         {

@@ -6,12 +6,14 @@
     using ArbitraryException;
     using Resource;
 
+    [Serializable]
     public class Vegetable
     {
+        [NonSerialized]
         private const int UnitOfWeigth = 100,
                          CaloriesDefault = 50,
                          WeigthDefault = 100;
-
+        [NonSerialized]
         private static int countId = 1;
 
         private string color,

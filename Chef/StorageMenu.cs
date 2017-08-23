@@ -10,7 +10,10 @@
 
     internal static class StorageMenu
     {
-        private static Storage txtStorage;
+        private const byte ToExport = 0,
+                            ToImport = 1;
+
+        private static Storage storage;
 
         internal static void Main(Salad salad)
         {
@@ -37,6 +40,7 @@
                         }
 
                         exitToMainMenu = true;
+
                         break;
 
                     case ConsoleKey.D2:
@@ -50,6 +54,7 @@
                     case ConsoleKey.Q:
 
                         exitToMainMenu = true;
+
                         break;
 
                     default:
@@ -73,31 +78,69 @@
                     case ConsoleKey.D1:
                     case ConsoleKey.NumPad1:
 
-                        txtStorage = new Storage(salad, Text.TxtFile, new TxtTactory());
-
-                        if (txtStorage.Export())
-                        {
-                            Screen.ResultStorage(Text.AboutSavedFile, Text.TxtFile);
-                        }
-                        else
-                        {
-                            Screen.ResultStorage(Text.FileNotSaved, Text.TxtFile);
-                        }
-
+                        storage = new Storage(salad, Text.TxtFile, new TxtFactory());
+                        StorageMenu.CommonToStorage(storage, StorageMenu.ToExport);
                         exitToExportMenu = true;
+
                         break;
 
                     case ConsoleKey.D2:
                     case ConsoleKey.NumPad2:
+
+                        storage = new Storage(salad, Text.BinFile, new BinFactory());
+                        StorageMenu.CommonToStorage(storage, StorageMenu.ToExport);
+                        exitToExportMenu = true;
+
                         break;
 
                     case ConsoleKey.Q:
+
                         exitToExportMenu = true;
+
                         break;
 
                     default:
                         break;
                 }
+            }
+        }
+
+        private static void CommonToStorage(Storage storage, byte exportOrImport)
+        {
+            string correctOperation = string.Empty,
+                   incorrectOperation = string.Empty;
+
+            bool isOperation = true;
+
+            switch (exportOrImport)
+            {
+                case StorageMenu.ToExport:
+
+                    isOperation = storage.Export();
+                    correctOperation = Text.AboutSavedFile;
+                    incorrectOperation = Text.FileNotSaved;
+
+                    break;
+
+                case StorageMenu.ToImport:
+
+                    isOperation = storage.Import();
+                    correctOperation = Text.AboutLoadFile;
+                    incorrectOperation = Text.FileNotLoaded;
+
+                    break;
+
+                default:
+                    break;
+            }
+
+            if (isOperation)
+            {
+                Screen.ResultStorage(correctOperation, storage.FileName);
+            }
+            else
+            {
+                Screen.ResultStorage(incorrectOperation, storage.FileName);
             }
         }
 
@@ -116,38 +159,42 @@
                     case ConsoleKey.D1:
                     case ConsoleKey.NumPad1:
 
-                        txtStorage = new Storage(salad, Text.TxtFile, new TxtTactory());
-
-                        if (File.Exists(Text.TxtFile))
-                        {
-                            if (txtStorage.Import())
-                            {
-                                Screen.ResultStorage(Text.AboutLoadFile, Text.TxtFile);
-                            }
-                            else
-                            {
-                                Screen.ResultStorage(Text.FileNotLoaded, Text.TxtFile);
-                            }
-                        }
-                        else
-                        {
-                            Screen.ResultStorage(Text.FileNotLoaded, Text.TxtFile);
-                        }
-
+                        storage = new Storage(salad, Text.TxtFile, new TxtFactory());
+                        StorageMenu.CommonToImport();
                         exitToImportMenu = true;
+
                         break;
 
                     case ConsoleKey.D2:
                     case ConsoleKey.NumPad2:
+
+                        storage = new Storage(salad, Text.BinFile, new BinFactory());
+                        StorageMenu.CommonToImport();
+                        exitToImportMenu = true;
+
                         break;
 
                     case ConsoleKey.Q:
+
                         exitToImportMenu = true;
+
                         break;
 
                     default:
                         break;
                 }
+            }
+        }
+
+        private static void CommonToImport()
+        {
+            if (File.Exists(storage.FileName))
+            {
+                StorageMenu.CommonToStorage(storage, StorageMenu.ToImport);
+            }
+            else
+            {
+                Screen.ResultStorage(Text.FileNotLoaded, storage.FileName);
             }
         }
     }

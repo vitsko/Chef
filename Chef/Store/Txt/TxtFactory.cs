@@ -1,6 +1,6 @@
 ﻿namespace Chef.Store.Txt
 {
-    internal class TxtTactory : StorageFactory
+    internal class TxtFactory : StorageFactory
     {
         public override Export CreateExport()
         {

@@ -244,4 +244,8 @@ Max calorie of vegetable per unit of weigth must be integer.</value>
   <data name="SpliterOfTitle" xml:space="preserve">
     <value>:</value>
   </data>
+  <!--ToBin-->
+  <data name="BinFile" xml:space="preserve">
+    <value>SavedFile.data</value>
+  </data>
 </root>
