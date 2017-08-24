@@ -93,6 +93,15 @@
 
                         break;
 
+                    case ConsoleKey.D3:
+                    case ConsoleKey.NumPad3:
+
+                        storage = new Storage(salad, Text.JSONFile, new JSONFactory());
+                        StorageMenu.CommonToStorage(storage, StorageMenu.ToExport);
+                        exitToExportMenu = true;
+
+                        break;
+
                     case ConsoleKey.Q:
 
                         exitToExportMenu = true;
@@ -169,6 +178,15 @@
                     case ConsoleKey.NumPad2:
 
                         storage = new Storage(salad, Text.BinFile, new BinFactory());
+                        StorageMenu.CommonToImport();
+                        exitToImportMenu = true;
+
+                        break;
+
+                    case ConsoleKey.D3:
+                    case ConsoleKey.NumPad3:
+
+                        storage = new Storage(salad, Text.JSONFile, new JSONFactory());
                         StorageMenu.CommonToImport();
                         exitToImportMenu = true;
 

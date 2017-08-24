@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Text;
     using ArbitraryException;
+    using Newtonsoft.Json;
     using Resource;
 
     [Serializable]
@@ -85,6 +86,7 @@
             }
         }
 
+        [JsonIgnore]
         public int Id
         {
             get;
@@ -145,6 +147,7 @@
             }
         }
 
+        [JsonIgnore]
         public int TotalCalories
         {
             get
@@ -153,6 +156,7 @@
             }
         }
 
+        [JsonIgnore]
         public Dictionary<string, string> TitleasAndValuesOfVegetable
         {
             get

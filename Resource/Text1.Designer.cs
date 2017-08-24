@@ -163,8 +163,9 @@ namespace Resource {
         /// <summary>
         ///   Looks up a localized string similar to 
         ///Export Menu:
-        ///[1] -- From txt&apos;s file
-        ///[2] -- From bin&apos;s file
+        ///[1] -- To txt&apos;s file
+        ///[2] -- To bin&apos;s file
+        ///[3] -- To JSON
         ///
         ///[Q] -- Exit
         ///    .
@@ -207,6 +208,7 @@ namespace Resource {
         ///Import Menu:
         ///[1] -- From txt&apos;s file
         ///[2] -- From bin&apos;s file
+        ///[3] -- From JSON
         ///
         ///[Q] -- Exit
         ///    .
@@ -214,6 +216,15 @@ namespace Resource {
         public static string ImportMenu {
             get {
                 return ResourceManager.GetString("ImportMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SavedFile.json.
+        /// </summary>
+        public static string JSONFile {
+            get {
+                return ResourceManager.GetString("JSONFile", resourceCulture);
             }
         }
         

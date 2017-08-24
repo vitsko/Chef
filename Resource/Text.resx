@@ -129,8 +129,9 @@ Storage Menu:
   <data name="ExportMenu" xml:space="preserve">
     <value>
 Export Menu:
-[1] -- From txt's file
-[2] -- From bin's file
+[1] -- To txt's file
+[2] -- To bin's file
+[3] -- To JSON
 
 [Q] -- Exit
     </value>
@@ -140,6 +141,7 @@ Export Menu:
 Import Menu:
 [1] -- From txt's file
 [2] -- From bin's file
+[3] -- From JSON
 
 [Q] -- Exit
     </value>
@@ -247,5 +249,9 @@ Max calorie of vegetable per unit of weigth must be integer.</value>
   <!--ToBin-->
   <data name="BinFile" xml:space="preserve">
     <value>SavedFile.data</value>
+  </data>
+  <!--ToJSON-->
+  <data name="JSONFile" xml:space="preserve">
+    <value>SavedFile.json</value>
   </data>
 </root>
