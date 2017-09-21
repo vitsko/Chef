@@ -29,7 +29,7 @@
             this.Name = name;
             this.Color = color;
             this.Weight = weight;
-            this.CaloriesPerUnitWeigth = caloriesPerUnitWeigth;
+            this.CaloriesPerUnitWeigth = caloriesPerUnitWeigth;            
         }
 
         public string Color

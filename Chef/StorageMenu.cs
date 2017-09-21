@@ -6,6 +6,7 @@
     using Chef.Store.Txt;
     using Resource;
     using Salad;
+    using Store.DB;
     using static System.Console;
 
     internal static class StorageMenu
@@ -47,6 +48,14 @@
                     case ConsoleKey.NumPad2:
 
                         StorageMenu.Import(salad);
+                        exitToMainMenu = true;
+
+                        break;
+
+                    case ConsoleKey.D3:
+                    case ConsoleKey.NumPad3:
+
+                        StorageMenu.DataBase(salad);
                         exitToMainMenu = true;
 
                         break;
@@ -213,6 +222,54 @@
             else
             {
                 Screen.ResultStorage(Text.FileNotLoaded, storage.FileName);
+            }
+        }
+
+        private static void DataBase(Salad salad)
+        {
+            bool exitToStorageMenu = false;
+            ConsoleKey selectPointMenu;
+
+            while (!exitToStorageMenu)
+            {
+                Screen.ShowWithClear(Text.MainDBMenu);
+                selectPointMenu = ReadKey().Key;
+
+                switch (selectPointMenu)
+                {
+                    case ConsoleKey.D1:
+                    case ConsoleKey.NumPad1:
+
+                        storage = new Storage(salad, Text.FileDB, new DBFactory());
+                        storage.Export();
+
+                        exitToStorageMenu = true;
+
+                        break;
+
+                    case ConsoleKey.D2:
+                    case ConsoleKey.NumPad2:
+
+                        exitToStorageMenu = true;
+
+                        break;
+
+                    case ConsoleKey.D3:
+                    case ConsoleKey.NumPad3:
+
+                        exitToStorageMenu = true;
+
+                        break;
+
+                    case ConsoleKey.Q:
+
+                        exitToStorageMenu = true;
+
+                        break;
+
+                    default:
+                        break;
+                }
             }
         }
     }

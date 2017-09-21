@@ -1,7 +1,7 @@
 ﻿namespace Chef
 {
     using System;
-    using Data;
+    using Chef.Store.DB;
     using Resource;
     using Salad;
     using static System.Console;
@@ -16,7 +16,8 @@
             ConsoleKey selectPointMenu;
 
             Salad salad = new Salad();
-            salad.MixtureOfVegetables = Data.GetVegetablesForSalad();
+
+            ExportDB.InitialLoadingData(salad, Text.FileDB);
 
             while (!exit)
             {

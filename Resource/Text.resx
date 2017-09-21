@@ -122,6 +122,7 @@ Main menu:
 Storage Menu:
 [1] -- Export
 [2] -- Import
+[3] -- Work with DB
 
 [Q] -- Exit
     </value>
@@ -142,6 +143,29 @@ Import Menu:
 [1] -- From txt's file
 [2] -- From bin's file
 [3] -- From JSON
+
+[Q] -- Exit
+    </value>
+  </data>
+  <data name="MainDBMenu" xml:space="preserve">
+    <value>
+DB Menu:
+
+[1] -- Export
+[2] -- Import
+[3] -- CRUD operations
+
+[Q] -- Exit
+    </value>
+  </data>
+  <data name="DBMenuCRUD" xml:space="preserve">
+    <value>
+DB Menu CRUD:
+
+[1] -- Select all vegetables
+[2] -- Delete vegetable
+[3] -- Update vegetable
+[4] -- Insert vegetable
 
 [Q] -- Exit
     </value>
@@ -253,5 +277,18 @@ Max calorie of vegetable per unit of weigth must be integer.</value>
   <!--ToJSON-->
   <data name="JSONFile" xml:space="preserve">
     <value>SavedFile.json</value>
+  </data>
+  <!--DB-->
+  <data name="FileDB" xml:space="preserve">
+    <value>Chef.mdf</value>
+  </data>
+  <data name="ConnectionStringToCreateFileDB" xml:space="preserve">
+    <value>Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True</value>
+  </data>
+  <data name="PathToDB" xml:space="preserve">
+    <value>{0}\{1}</value>
+  </data>
+  <data name="ConnectionStringToWorkWithDBFile" xml:space="preserve">
+    <value>Data Source=(LocalDB)\MSSQLLocalDB; AttachDbFilename=|DataDirectory|\{0};Integrated Security=True;</value>
   </data>
 </root>
