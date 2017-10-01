@@ -1,15 +1,16 @@
 ﻿namespace Chef.Store.DB
 {
     using System;
+    using System.Configuration;
     using System.Data;
     using System.Data.SqlClient;
-    using System.Linq;
     using System.IO;
     using Resource;
     using Salad;
 
     internal class InitializationDB
     {
+        private const int CountColomns = 5;
         private static SqlConnection connection;
         private static string connectionString;
         private static DataTable table = new DataTable();
@@ -19,7 +20,7 @@
         internal InitializationDB(string fileName, Salad salad)
         {
             var databaseName = Path.GetFileNameWithoutExtension(fileName);
-            connectionString = string.Format(Text.ConnectionStringToWorkWithDBFile, fileName);
+            connectionString = string.Format(ConfigurationManager.ConnectionStrings["WorkWithDBFile"].ConnectionString, fileName);
 
             if (!File.Exists(fileName))
             {
@@ -52,15 +53,17 @@
             }
         }
 
-        internal static void Update(Vegetable vegetable)
+        internal static void Delete()
         {
-            InitializationDB.dataAdpater.UpdateCommand = new SqlCommand($"UPDATE [dbo].[Vegetables] SET Name='{vegetable.Name}', Color = '{vegetable.Color}', Weight={vegetable.Weight}, Calories = {vegetable.CaloriesPerUnitWeigth} WHERE VegetableID ={vegetable.Id}", InitializationDB.connection);
-            IndentifyParametrsCommand(InitializationDB.dataAdpater.UpdateCommand);
+            InitializationDB.CreateCommand($"DELETE FROM [dbo].[Vegetables]", connectionString);
         }
 
-        internal static void Delete(int id)
+        internal static void SetPrimaryKey()
         {
-            InitializationDB.CreateCommand($"DELETE FROM [dbo].[Vegetables] WHERE VegetableID = {id}", connectionString);
+            if (InitializationDB.table.PrimaryKey.Length == 0)
+            {
+                InitializationDB.table.PrimaryKey = InitializationDB.dataAdpater.FillSchema(InitializationDB.table, SchemaType.Source).PrimaryKey;
+            }
         }
 
         private static void CreateCommand(string queryString, string connectionString)
@@ -117,8 +120,8 @@
                                         [Calories]INT NOT NULL
                                        )";
 
-            InitializationDB.CreateCommand(queryToCreateDB, Text.ConnectionStringToCreateFileDB);
-            InitializationDB.CreateCommand(quertyToDetachDB, Text.ConnectionStringToCreateFileDB);
+            InitializationDB.CreateCommand(queryToCreateDB, ConfigurationManager.ConnectionStrings["CreateFileDB"].ConnectionString);
+            InitializationDB.CreateCommand(quertyToDetachDB, ConfigurationManager.ConnectionStrings["CreateFileDB"].ConnectionString);
             InitializationDB.CreateCommand(quertyToCreateTable, connectionStringToMDFFile);
             InitializationDB.CreateTable();
         }

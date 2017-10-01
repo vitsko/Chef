@@ -151,42 +151,6 @@ namespace Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True.
-        /// </summary>
-        public static string ConnectionStringToCreateFileDB {
-            get {
-                return ResourceManager.GetString("ConnectionStringToCreateFileDB", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Data Source=(LocalDB)\MSSQLLocalDB; AttachDbFilename=|DataDirectory|\{0};Integrated Security=True;.
-        /// </summary>
-        public static string ConnectionStringToWorkWithDBFile {
-            get {
-                return ResourceManager.GetString("ConnectionStringToWorkWithDBFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 
-        ///DB Menu CRUD:
-        ///
-        ///[1] -- Select all vegetables
-        ///[2] -- Delete vegetable
-        ///[3] -- Update vegetable
-        ///[4] -- Insert vegetable
-        ///
-        ///[Q] -- Exit
-        ///    .
-        /// </summary>
-        public static string DBMenuCRUD {
-            get {
-                return ResourceManager.GetString("DBMenuCRUD", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to You input incorrect max calorie of vegetable per unit of weigth. 
         ///Max calorie of vegetable per unit of weigth must be integer..
         /// </summary>
@@ -202,6 +166,7 @@ namespace Resource {
         ///[1] -- To txt&apos;s file
         ///[2] -- To bin&apos;s file
         ///[3] -- To JSON
+        ///[4] -- To DB
         ///
         ///[Q] -- Exit
         ///    .
@@ -222,7 +187,7 @@ namespace Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Info about the salad has not loaded. File {0} has been not found or contains incorrect data..
+        ///   Looks up a localized string similar to Info about the salad has not loaded. File {0} has been not found, contains incorrect data or is empty..
         /// </summary>
         public static string FileNotLoaded {
             get {
@@ -254,6 +219,7 @@ namespace Resource {
         ///[1] -- From txt&apos;s file
         ///[2] -- From bin&apos;s file
         ///[3] -- From JSON
+        ///[4] -- From DB
         ///
         ///[Q] -- Exit
         ///    .
@@ -270,23 +236,6 @@ namespace Resource {
         public static string JSONFile {
             get {
                 return ResourceManager.GetString("JSONFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 
-        ///DB Menu:
-        ///
-        ///[1] -- Export
-        ///[2] -- Import
-        ///[3] -- CRUD operations
-        ///
-        ///[Q] -- Exit
-        ///    .
-        /// </summary>
-        public static string MainDBMenu {
-            get {
-                return ResourceManager.GetString("MainDBMenu", resourceCulture);
             }
         }
         
@@ -450,7 +399,6 @@ namespace Resource {
         ///Storage Menu:
         ///[1] -- Export
         ///[2] -- Import
-        ///[3] -- Work with DB
         ///
         ///[Q] -- Exit
         ///    .

@@ -122,7 +122,6 @@ Main menu:
 Storage Menu:
 [1] -- Export
 [2] -- Import
-[3] -- Work with DB
 
 [Q] -- Exit
     </value>
@@ -133,6 +132,7 @@ Export Menu:
 [1] -- To txt's file
 [2] -- To bin's file
 [3] -- To JSON
+[4] -- To DB
 
 [Q] -- Exit
     </value>
@@ -143,29 +143,7 @@ Import Menu:
 [1] -- From txt's file
 [2] -- From bin's file
 [3] -- From JSON
-
-[Q] -- Exit
-    </value>
-  </data>
-  <data name="MainDBMenu" xml:space="preserve">
-    <value>
-DB Menu:
-
-[1] -- Export
-[2] -- Import
-[3] -- CRUD operations
-
-[Q] -- Exit
-    </value>
-  </data>
-  <data name="DBMenuCRUD" xml:space="preserve">
-    <value>
-DB Menu CRUD:
-
-[1] -- Select all vegetables
-[2] -- Delete vegetable
-[3] -- Update vegetable
-[4] -- Insert vegetable
+[4] -- From DB
 
 [Q] -- Exit
     </value>
@@ -258,7 +236,7 @@ Max calorie of vegetable per unit of weigth must be integer.</value>
     <value>Info about the salad has loaded from {0}</value>
   </data>
   <data name="FileNotLoaded" xml:space="preserve">
-    <value>Info about the salad has not loaded. File {0} has been not found or contains incorrect data.</value>
+    <value>Info about the salad has not loaded. File {0} has been not found, contains incorrect data or is empty.</value>
   </data>
   <!--ToTxt-->
   <data name="TxtFile" xml:space="preserve">
@@ -282,13 +260,7 @@ Max calorie of vegetable per unit of weigth must be integer.</value>
   <data name="FileDB" xml:space="preserve">
     <value>Chef.mdf</value>
   </data>
-  <data name="ConnectionStringToCreateFileDB" xml:space="preserve">
-    <value>Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True</value>
-  </data>
   <data name="PathToDB" xml:space="preserve">
     <value>{0}\{1}</value>
-  </data>
-  <data name="ConnectionStringToWorkWithDBFile" xml:space="preserve">
-    <value>Data Source=(LocalDB)\MSSQLLocalDB; AttachDbFilename=|DataDirectory|\{0};Integrated Security=True;</value>
   </data>
 </root>

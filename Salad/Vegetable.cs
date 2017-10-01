@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Data;
     using System.Text;
     using ArbitraryException;
     using Newtonsoft.Json;
@@ -29,7 +30,7 @@
             this.Name = name;
             this.Color = color;
             this.Weight = weight;
-            this.CaloriesPerUnitWeigth = caloriesPerUnitWeigth;            
+            this.CaloriesPerUnitWeigth = caloriesPerUnitWeigth;
         }
 
         public string Color
@@ -187,6 +188,17 @@
             }
 
             return allinfo.ToString();
+        }
+
+        public void ChangeID(DataRow row)
+        {
+            var id = (int)row["VegetableID"];
+
+            if (this.Id != id)
+            {
+                this.Id = id;
+                countId = id;
+            }
         }
 
         internal virtual string GetInfoToSave()

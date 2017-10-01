@@ -17,8 +17,6 @@
 
             Salad salad = new Salad();
 
-            //ExportDB.InitialLoadingData(salad, Text.FileDB);
-
             salad.MixtureOfVegetables = Data.GetVegetablesForSalad();
 
             while (!exit)
